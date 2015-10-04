@@ -20,7 +20,7 @@ public class DocumentBenchmarking {
 	    int trials = 100;
 
 	    // The text to test on
-	    String s = "data/warAndPeace.txt";
+	    String textfile = "data/warAndPeace.txt";
 		
 	    // The amount of characters to increment each step
 	    // You can play around with this
