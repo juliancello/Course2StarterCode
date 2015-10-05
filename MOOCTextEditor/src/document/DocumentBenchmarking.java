@@ -24,7 +24,7 @@ public class DocumentBenchmarking {
 		
 	    // The amount of characters to increment each step
 	    // You can play around with this
-		int increment = 10000;
+		int increment = 20000;
 
 		// The number of steps to run.  
 		// You can play around with this.
@@ -81,6 +81,9 @@ public class DocumentBenchmarking {
 			while ((val = bis.read()) != -1 && count < numChars) {
 				s.append((char)val);
 				count++;
+			}
+			if (count < numChars) {
+				System.out.println("Warning: End of file reached at " + count + " characters.");
 			}
 			bis.close();
 		}
