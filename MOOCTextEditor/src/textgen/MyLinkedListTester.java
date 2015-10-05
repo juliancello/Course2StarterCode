@@ -117,16 +117,32 @@ public class MyLinkedListTester {
 		// TODO: Add more tests here
 	}
 	
+	/** Test adding an element into the end of the list, specifically
+	 *  public boolean add(E element)
+	 * */
+	@Test
+	public void testAddEnd()
+	{
+        // TODO: implement this test
+		
+	}
+
+	
 	/** Test the size of the list */
 	@Test
 	public void testSize()
 	{
 		// TODO: implement this test
 	}
+
 	
-	/** Test inserting an element into the list */
+	
+	/** Test adding an element into the list at a specified index,
+	 * specifically:
+	 * public void add(int index, E element)
+	 * */
 	@Test
-	public void testInsert()
+	public void testAddAtIndex()
 	{
         // TODO: implement this test
 		

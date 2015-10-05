@@ -18,8 +18,17 @@ public class MyLinkedList<E> extends AbstractList<E> {
 	public MyLinkedList() {
 		// TODO: Implement this method
 	}
-	
-	
+
+	/**
+	 * Appends an element to the end of the list
+	 * @param element The element to add
+	 */
+	public boolean add(E element ) 
+	{
+		// TODO: Implement this method
+		return false;
+	}
+
 	/** Get the element at position index 
 	 * @throws IndexOutOfBoundsException if the index is out of bounds. */
 	public E get(int index) 
@@ -49,6 +58,9 @@ public class MyLinkedList<E> extends AbstractList<E> {
       return -1;
   }
   
+  
+ 
+  
   /**
    * Add an element to the list at the specified index
    * @param The index where the element should be added
@@ -59,6 +71,7 @@ public class MyLinkedList<E> extends AbstractList<E> {
 	  // TODO: Implement this method
   }
   
+    
   /** Remove a node at the specified index and return its data element.
    * @param index The index of the element to remove
    * @return The data element removed
