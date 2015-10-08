@@ -24,7 +24,7 @@ public class AutoCompleteDictionaryTrie implements  Dictionary, AutoComplete {
 	
 	
 	/** Insert a word into the trie.
-	 * For the basic part of the assignment, you should ignore the word's case.
+	 * For the basic part of the assignment (part 2), you should ignore the word's case.
 	 * That is, you should convert the string to all lower case as you insert it. */
 	public boolean addWord(String word)
 	{
@@ -63,6 +63,7 @@ public class AutoCompleteDictionaryTrie implements  Dictionary, AutoComplete {
 	}
 	
 	
+	/** Returns whether the string is a word in the trie */
 	@Override
 	public boolean isWord(String s) 
 	{

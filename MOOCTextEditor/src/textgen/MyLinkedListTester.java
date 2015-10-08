@@ -156,14 +156,6 @@ public class MyLinkedListTester {
 	    
 	}
 	
-	/** Test if heads of the lists are correct */
-	@Test
-	public void testAddAndRemove()
-	{
-	    // TODO: Optionally: implement this test
-	    // Or you might choose to put these tests in the testAdd or 
-	    // testRemove methods.
-	}
 	
 	// TODO: Optionally add more test methods.
 	
