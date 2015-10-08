@@ -43,7 +43,7 @@ public class MyLinkedListGrader {
 	public void doTest()
 	{
 		try {
-			out = new PrintWriter("grader_output/module3.part1.out", "utf-8");
+			out = new PrintWriter("MOOCTextEditor/grader_output/module3.part1.out", "utf-8");
 		} catch (Exception e) {
 			e.printStackTrace();
 			return;
