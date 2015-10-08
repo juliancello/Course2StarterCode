@@ -98,6 +98,7 @@ public class NearbyWords implements SpellingSuggest{
    }	
 
    public static void main(String[] args) {
+	   /* testing code
 	   String word = "i";
 	   NearbyWords w = new NearbyWords(new DictionaryHashSet("data/dict.txt"));
 	   List<String> l = w.distanceOne(word, true);
@@ -108,6 +109,7 @@ public class NearbyWords implements SpellingSuggest{
 	   List<String> suggest = w.suggestions(word, 10);
 	   System.out.println("Spelling Suggestions for \""+word+"\" are:");
 	   System.out.println(suggest);
+	   */
    }
 
 }
