@@ -33,33 +33,13 @@ public class AutoCompleteDictionaryTrie implements  Dictionary, AutoComplete {
 	}
 	
 	/** 
-	 * return the side of the dictionary.
+	 * Return the number of words in the dictionary.  This is NOT necessarily the same
+	 * as the number of TrieNodes in the trie.
 	 */
 	public int size()
 	{
 	    //TODO: Implement this method
-	    return -1;
-	}
-	
-	// For debugging
-	public void printTree()
-	{
-		printNode(root);
-	}
-	
-	/** Do a pre-order traversal from this node down */
-	public void printNode(TrieNode curr)
-	{
-		if (curr == null) 
-			return;
-		
-		System.out.println(curr.getText());
-		
-		TrieNode next = null;
-		for (Character c : curr.getValidNextCharacters()) {
-			next = curr.getChild(c);
-			printNode(next);
-		}
+	    return 0;
 	}
 	
 	
@@ -84,7 +64,29 @@ public class AutoCompleteDictionaryTrie implements  Dictionary, AutoComplete {
 		// TODO: Implement this method
          return null;
      }
-	
+
+ 	// For debugging
+ 	public void printTree()
+ 	{
+ 		printNode(root);
+ 	}
+ 	
+ 	/** Do a pre-order traversal from this node down */
+ 	public void printNode(TrieNode curr)
+ 	{
+ 		if (curr == null) 
+ 			return;
+ 		
+ 		System.out.println(curr.getText());
+ 		
+ 		TrieNode next = null;
+ 		for (Character c : curr.getValidNextCharacters()) {
+ 			next = curr.getChild(c);
+ 			printNode(next);
+ 		}
+ 	}
+ 	
+
 	
 }
 
