@@ -14,25 +14,21 @@ import java.util.List;
  */
 public class WPTree implements WordPath {
 
-	// this will do all the work of dynamically creating the tree based on two words
-	// keep a hashset of seen words
+	// this is the root node of the tree being build between the two nodes
 	private WPTreeNode root;
-	
-
-	// constructor will build path between the two nodes
 	
 	public WPTree () {
 		this.root = null;
 	}
 	
-	// method to retrieve the path
+	// see method description in WordPath interface
 	public List<String> findPath(String word1, String word2) 
 	{
 	    // TODO: Implement this method.
 	    return new LinkedList<String>();
 	}
 	
-	// Not sure if this will be given
+	// Method to print a list of WPTreeNodes (useful for debugging)
 	private String printQueue(List<WPTreeNode> list) {
 		String ret = "[ ";
 		
@@ -45,6 +41,11 @@ public class WPTree implements WordPath {
 	
 }
 
+// Tree Node in a WordPath Tree. This is a standard tree with each
+// node having any number of possible children.  Each node should only
+// contain a word in the dictionary and the relationship between nodes is
+// that a child is one character mutation (deletion, insertion, or 
+// substitution) away from its parent
 class WPTreeNode {
     
     private String word;
