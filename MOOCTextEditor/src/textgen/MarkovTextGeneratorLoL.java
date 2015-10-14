@@ -66,11 +66,13 @@ public class MarkovTextGeneratorLoL implements MarkovTextGenerator {
 	}
 	
 	/**
-	 * This is a minimal set of tests.  Note that it's difficult 
+	 * This is a minimal set of tests.  Note that it can be difficult
+	 * to test methods/classes with randomized behavior.   
 	 * @param args
 	 */
 	public static void main(String[] args)
 	{
+		// feed the generator a fixed random value for repeatable behavior
 		MarkovTextGeneratorLoL gen = new MarkovTextGeneratorLoL(new Random(42));
 		String textString = "Hello.  Hello there.  This is a test.  Hello there.  Hello Bob.  Test again.";
 		System.out.println(textString);
