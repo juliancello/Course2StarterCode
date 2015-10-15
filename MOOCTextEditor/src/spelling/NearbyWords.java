@@ -119,7 +119,8 @@ public class NearbyWords implements SpellingSuggest {
    public static void main(String[] args) {
 	   /* basic testing code to get started
 	   String word = "i";
-	   NearbyWords w = new NearbyWords(new DictionaryHashSet("Course2/data/dict.txt"));
+	   // Pass NearbyWords any Dictionary implementation you prefer
+	   NearbyWords w = new NearbyWords(new DictionaryHashSet("MOOCTextEditor/data/dict.txt"));
 	   List<String> l = w.distanceOne(word, true);
 	   System.out.println("One away word Strings for for \""+word+"\" are:");
 	   System.out.println(l+"\n");

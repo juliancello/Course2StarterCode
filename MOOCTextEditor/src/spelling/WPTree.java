@@ -9,16 +9,23 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * @author leporter
+ * WPTree implements WordPath by dynamically creating a tree of words during a Breadth First
+ * Search of Nearby words to create a path between two words. 
+ * 
+ * @author UC San Diego Intermediate MOOC team
  *
  */
 public class WPTree implements WordPath {
 
 	// this is the root node of the WPTree
 	private WPTreeNode root;
+	// used to search for nearby Words
+	private NearbyWords nw; 
 	
 	public WPTree () {
 		this.root = null;
+		// TODO initialize a NearbyWords object
+		// this.nw = ...
 	}
 	
 	// see method description in WordPath interface
