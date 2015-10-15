@@ -46,7 +46,7 @@ public class MyLinkedListGrader {
                 int tests = 0;
                 String feedback = "";
 		try {
-			out = new PrintWriter("MOOCTextEditor/grader_output/mod3part1", "utf-8");
+			out = new PrintWriter("grader_output/module3.part1.out", "utf-8");
 		} catch (Exception e) {
 			e.printStackTrace();
 			return;
@@ -57,6 +57,7 @@ public class MyLinkedListGrader {
                 feedback += "** Test #1: Adding to end of list...";
 		for (int i : nums) {
 			lst.add(i);
+                }
                 feedback += "Got " + printListForwards(lst) + ". ";
 
                 feedback += "** Test #2: Getting from the middle...";
@@ -95,7 +96,7 @@ public class MyLinkedListGrader {
 
                 feedback += "** Tests 11-20: Testing method bounds...";
                 
-                out.println("Tests complete. Check that everything is as expected.";
+                out.println(feedback + "Tests complete. Check that everything is as expected.");
                 out.close();
 	}
 	
