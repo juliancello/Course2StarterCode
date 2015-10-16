@@ -98,7 +98,7 @@ public class MyLinkedListGrader {
                 
                 out.println(feedback + "Tests complete. Check that everything is as expected.");
                 out.close();
-		}
+		
 	}
 	
 	public static void main(String args[])
