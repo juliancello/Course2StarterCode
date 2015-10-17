@@ -36,7 +36,7 @@ public class WPTreeGrader {
         }
 
         try {
-            WPTree tree = new WPTree(new NearbyWords("data/dict.txt"));
+            WPTree tree = new WPTree(new NearbyWords(new DictionaryHashSet("data/dict.txt")));
 
             List<String> path = tree.findPath("pool", "spoon");
 
