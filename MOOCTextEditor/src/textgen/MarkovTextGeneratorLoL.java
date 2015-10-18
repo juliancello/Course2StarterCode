@@ -27,12 +27,6 @@ public class MarkovTextGeneratorLoL implements MarkovTextGenerator {
 		rnGenerator = generator;
 	}
 	
-	/** Retrain the generator from scratch on the source text */
-	@Override
-	public void retrain(String sourceText)
-	{
-		// TODO: Implement this method.
-	}
 	
 	/** Train the generator by adding the sourceText */
 	@Override
@@ -40,6 +34,16 @@ public class MarkovTextGeneratorLoL implements MarkovTextGenerator {
 	{
 		// TODO: Implement this method
 	}
+	
+	/** 
+	 * Generate the number of words requested.
+	 */
+	@Override
+	public String generateText(int numWords) {
+	    // TODO: Implement this method
+		return null;
+	}
+	
 	
 	// Can be helpful for debugging
 	@Override
@@ -53,17 +57,15 @@ public class MarkovTextGeneratorLoL implements MarkovTextGenerator {
 		return toReturn;
 	}
 	
-
+	/** Retrain the generator from scratch on the source text */
+	@Override
+	public void retrain(String sourceText)
+	{
+		// TODO: Implement this method.
+	}
+	
 	// TODO: Add any private helper methods you need here.
 	
-	/** 
-	 * Generate the number of words requested.
-	 */
-	@Override
-	public String generateText(int numWords) {
-	    // TODO: Implement this method
-		return null;
-	}
 	
 	/**
 	 * This is a minimal set of tests.  Note that it can be difficult
