@@ -25,7 +25,7 @@ public class WPTree implements WordPath {
 	public WPTree () {
 		this.root = null;
 		// TODO initialize a NearbyWords object
-		// this.nw = new NearbyWords(new DictionaryHashSet("data/dict.txt"));
+		// this.nw = new NearbyWords(new DictionaryHashSet("MOOCTextEditor/data/dict.txt"));
 	}
 	
 	// see method description in WordPath interface
