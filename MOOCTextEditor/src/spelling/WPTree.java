@@ -22,10 +22,18 @@ public class WPTree implements WordPath {
 	// used to search for nearby Words
 	private NearbyWords nw; 
 	
+	// This constructor is used by the Text Editor Application
+	// You'll need to create your own NearbyWords object here.
 	public WPTree () {
 		this.root = null;
 		// TODO initialize a NearbyWords object
 		// this.nw = new NearbyWords(new DictionaryHashSet("MOOCTextEditor/data/dict.txt"));
+	}
+	
+	//This constructor will be used by the grader code
+	public WPTree (NearbyWords nw) {
+		this.root = null;
+		this.nw = nw;
 	}
 	
 	// see method description in WordPath interface
