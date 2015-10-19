@@ -43,7 +43,7 @@ public class EfficientDocument extends Document {
 		// Words are only strings of letters.  No numbers.
 		List<String> tokens = getTokens("[!?.]+|[a-zA-Z]+");
 		
-		// TODO: Finish this method.  Remeber the countSyllables method from 
+		// TODO: Finish this method.  Remember the countSyllables method from 
 		// Document.  That will come in handy here.
 	}
 	
