@@ -18,7 +18,7 @@ public class MyLinkedListTester {
 
 	private static final int LONG_LIST_LENGTH =10; 
 
-	LinkedList<String> shortList;
+	MyLinkedList<String> shortList;
 	MyLinkedList<Integer> emptyList;
 	MyLinkedList<Integer> longerList;
 	MyLinkedList<Integer> list1;
@@ -29,7 +29,7 @@ public class MyLinkedListTester {
 	@Before
 	public void setUp() throws Exception {
 		// Feel free to use these lists, or add your own
-	    shortList = new LinkedList<String>();
+	    shortList = new MyLinkedList<String>();
 		shortList.add("A");
 		shortList.add("B");
 		emptyList = new MyLinkedList<Integer>();
