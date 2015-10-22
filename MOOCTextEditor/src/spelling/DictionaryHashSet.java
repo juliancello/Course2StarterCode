@@ -13,9 +13,14 @@ import java.util.Scanner;
  */
 public class DictionaryHashSet implements Dictionary 
 {
+
+    private HashSet<String> words;
 	
-    // TODO: Add member variables and a constructor
-    
+	public DictionaryHashSet()
+	{
+	    words = new HashSet<String>();
+	}
+	
     /** Add this word to the dictionary.
      * @param word The word to add
      * @return true if the word was added to the dictionary 
@@ -23,23 +28,21 @@ public class DictionaryHashSet implements Dictionary
 	@Override
 	public boolean addWord(String word) 
 	{
-	    //TODO: Implement this method
-	    return false;
+		return words.add(word.toLowerCase());
 	}
 
 	/** Return the number of words in the dictionary */
     @Override
 	public int size()
 	{
-	    // TODO: Implemement this method
-	    return 0;
+    	 return words.size();
 	}
 	
 	/** Is this a word according to this dictionary? */
     @Override
 	public boolean isWord(String s) {
-	    // TODO: Implement this method
-	    return false;
+    	return words.contains(s.toLowerCase());
 	}
 	
+   
 }
