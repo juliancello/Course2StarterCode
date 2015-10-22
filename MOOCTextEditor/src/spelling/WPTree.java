@@ -27,7 +27,9 @@ public class WPTree implements WordPath {
 	public WPTree () {
 		this.root = null;
 		// TODO initialize a NearbyWords object
-		// this.nw = new NearbyWords(new DictionaryHashSet("MOOCTextEditor/data/dict.txt"));
+		// Dictionary d = new DictionaryHashSet();
+		// DictionaryLoader.loadDictionary(d, "data/dict.txt");
+		// this.nw = new NearbyWords(d);
 	}
 	
 	//This constructor will be used by the grader code
