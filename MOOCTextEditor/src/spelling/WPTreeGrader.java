@@ -36,8 +36,11 @@ public class WPTreeGrader {
         }
 
         try {
-            WPTree tree = new WPTree(new NearbyWords(new DictionaryHashSet("data/dict.txt")));
+        	DictionaryHashSet dict = new DictionaryHashSet();
+        	DictionaryLoader.loadDictionary(dict, "data/dict.txt");
 
+            WPTree tree = new WPTree(new NearbyWords(new DictionaryHashSet()));
+            
             List<String> path = tree.findPath("pool", "spoon");
 
             feedback += "** Test #1: Testing short path...";
@@ -59,6 +62,7 @@ public class WPTreeGrader {
             feedback += "Your path was: " + printPath(path) + ".\n";
         } catch (Exception e) {
             out.println(e);
+            out.close();
             return;
         }
 
