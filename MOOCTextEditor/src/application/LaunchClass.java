@@ -31,7 +31,7 @@ public class LaunchClass {
     }
     
     public spelling.Dictionary getDictionary() {
-        spelling.Dictionary d = new spelling.DictionaryHashSet();
+        spelling.Dictionary d = new spelling.DictionaryBST();
         spelling.DictionaryLoader.loadDictionary(d, dictFile);
     	return d;
     }

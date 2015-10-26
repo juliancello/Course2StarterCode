@@ -22,7 +22,7 @@ public class EfficientDocument extends Document {
 	}
 	
 	
-	/** Return true if this string is a word (as opposed to punctuation
+	/** Return true if this string is a word (as opposed to punctuation)
 	 * @param tok The string to check
 	 * @return true if tok is a word, false otherwise. */
 	private boolean isWord(String tok)
