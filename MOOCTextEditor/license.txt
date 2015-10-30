@@ -1,0 +1,2 @@
+RichTextFX is
+Dual-licensed under BSD 2-Clause License and GPLv2 with the Classpath Exception.
