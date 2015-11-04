@@ -76,9 +76,9 @@ public class EfficientDocument extends Document {
 	}
 
 	/**
-	 * Get the number of sentences in the document.
+	 * Get the number of syllables in the document.
 	 * Words are defined as above.  Syllables are defined as:
-	 * a contiguous sequence of vowels, except for an "e" at the 
+	 * a contiguous sequence of vowels, except for a lone "e" at the 
 	 * end of a word if the word has another set of contiguous vowels, 
 	 * makes up one syllable.   y is considered a vowel.
 	 * @return The number of syllables in the document.
