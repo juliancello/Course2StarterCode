@@ -54,7 +54,7 @@ public class AutoCompleteDictionaryTrie implements  Dictionary, AutoComplete {
 	/** 
 	 *  * Returns up to the n "best" predictions, including the word itself,
      * in terms of length
-     * If this string is not in the trie, it returns null.
+     * If this string is not in the trie, it returns an empty list.
      * @param text The text to use at the word stem
      * @param n The maximum number of predictions desired.
      * @return A list containing the up to n best predictions
