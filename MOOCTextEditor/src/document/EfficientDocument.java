@@ -22,9 +22,15 @@ public class EfficientDocument extends Document {
 	}
 	
 	
-	/** Return true if this string is a word (as opposed to punctuation)
+	/** 
+	 * Take a string that either contains only alphabetic characters,
+	 * or only sentence-ending punctuation.  Return true if the string
+	 * contains only alphabetic characters, and false if it contains
+	 * end of sentence punctuation.  
+	 * 
 	 * @param tok The string to check
-	 * @return true if tok is a word, false otherwise. */
+	 * @return true if tok is a word, false if it is punctuation. 
+	 */
 	private boolean isWord(String tok)
 	{
 	    // Note: This is a fast way of checking whether a string is a word
@@ -39,19 +45,49 @@ public class EfficientDocument extends Document {
      */
 	private void processText()
 	{
-		// Provide this first line in the starter code.  
-		// Words are only strings of letters.  No numbers.
+		// Call getTokens on the text to preserve separate strings that are 
+		// either words or sentence-ending punctuation.  Ignore everything
+		// That is not a word or a sentence-ending puctuation.
+		// MAKE SURE YOU UNDERSTAND THIS LINE BEFORE YOU CODE THE REST
+		// OF THIS METHOD.
 		List<String> tokens = getTokens("[!?.]+|[a-zA-Z]+");
 		
 		// TODO: Finish this method.  Remember the countSyllables method from 
-		// Document.  That will come in handy here.
+		// Document.  That will come in handy here.  isWord defined above will also help.
 	}
+
 	
+	/**
+	 * Get the number of sentences in the document.
+	 * Sentences are defined as contiguous strings of characters ending in an 
+	 * end of sentence punctuation (. ! or ?) or the last contiguous set of 
+	 * characters in the document, even if they don't end with a punctuation mark.
+	 * 
+	 * Check the examples in the main method below for more information. 
+	 *  
+	 * This method does NOT process the whole text each time it is called.  
+	 * It returns information already stored in the EfficientDocument object.
+	 * 
+	 * @return The number of sentences in the document.
+	 */
+	@Override
+	public int getNumSentences() {
+		//TODO: write this method.  Hint: It's simple
+		return 0;
+	}
+
 	
 	/**
 	 * Get the number of words in the document.
-	 * "Words" are defined as contiguous strings of alphabetic characters
-	 * i.e. any upper or lower case characters a-z or A-Z
+	 * A "word" is defined as a contiguous string of alphabetic characters
+	 * i.e. any upper or lower case characters a-z or A-Z.  This method completely 
+	 * ignores numbers when you count words, and assumes that the document does not have 
+	 * any strings that combine numbers and letters. 
+	 * 
+	 * Check the examples in the main method below for more information.
+	 * 
+	 * This method does NOT process the whole text each time it is called.  
+	 * It returns information already stored in the EfficientDocument object.
 	 * 
 	 * @return The number of words in the document.
 	 */
@@ -61,26 +97,18 @@ public class EfficientDocument extends Document {
 	    return 0;
 	}
 
-	/**
-	 * Get the number of sentences in the document.
-	 * Sentences are defined as contiguous strings of characters ending in an 
-	 * end of sentence punctuation (. ! or ?) or the last contiguous set of 
-	 * characters in the document, even if they don't end with a punctuation mark.
-	 * 
-	 * @return The number of sentences in the document.
-	 */
-	@Override
-	public int getNumSentences() {
-        //TODO: write this method.  Hint: It's simple
-        return 0;
-	}
 
 	/**
-	 * Get the number of syllables in the document.
-	 * Words are defined as above.  Syllables are defined as:
-	 * a contiguous sequence of vowels, except for a lone "e" at the 
-	 * end of a word if the word has another set of contiguous vowels, 
-	 * makes up one syllable.   y is considered a vowel.
+	 * Get the total number of syllables in the document (the stored text). 
+	 * To calculate the the number of syllables in a word, it uses the following rules:
+	 *       Each contiguous sequence of one or more vowels is a syllable, 
+	 *       with the following exception: a lone "e" at the end of a word 
+	 *       is not considered a syllable unless the word has no other syllables. 
+	 *       You should consider y a vowel.
+	 * 
+	 * This method does NOT process the whole text each time it is called.  
+	 * It returns information already stored in the EfficientDocument object.
+	 * 
 	 * @return The number of syllables in the document.
 	 */
 	@Override

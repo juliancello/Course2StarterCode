@@ -45,9 +45,14 @@ public abstract class Document {
 	// This is a helper function that returns the number of syllables
 	// in a word.  You should write this and use it in your 
 	// BasicDocument class.
+	//
 	// You will probably NOT need to add a countWords or a countSentences method
 	// here.  The reason we put countSyllables here because we'll use it again
 	// next week when we implement the EfficientDocument class.
+	// 
+	// For reasons of efficiency you should not create Matcher or Pattern 
+	// objects inside this method. Just use a loop to loop through the 
+	// characters in the string and write your own logic for counting syllables.
 	protected int countSyllables(String word)
 	{
 		// TODO: Implement this method so that you can call it from the 
@@ -116,7 +121,7 @@ public abstract class Document {
 	/** return the Flesch readability score of this document */
 	public double getFleschScore()
 	{
-	    // TODO: Implement this method
+	    // TODO: Implement this method in week 1
 	    return 0.0;
 	}
 	

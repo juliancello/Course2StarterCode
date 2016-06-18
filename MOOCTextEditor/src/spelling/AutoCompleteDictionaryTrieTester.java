@@ -86,7 +86,7 @@ public class AutoCompleteDictionaryTrieTester {
 	
 	/** Test the addWord method */
 	@Test
-	public void addWord()
+	public void testAddWord()
 	{
 		
 		
