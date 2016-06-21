@@ -60,13 +60,14 @@ public class BasicDocument extends Document
 	}
 	
 	/**
-	 * Get the total number of syllables in the 
-	 * document (the stored text). To count the number of syllables in a 
-	 * word, it uses the following rules:
+	 * Get the total number of syllables in the document (the stored text). 
+	 * To count the number of syllables in a word, it uses the following rules:
 	 *       Each contiguous sequence of one or more vowels is a syllable, 
 	 *       with the following exception: a lone "e" at the end of a word 
 	 *       is not considered a syllable unless the word has no other syllables. 
 	 *       You should consider y a vowel.
+	 *       
+	 * Check the examples in the main method below for more information.  
 	 * 
 	 * This method should process the entire text string each time it is called.  
 	 * 
@@ -76,7 +77,10 @@ public class BasicDocument extends Document
 	public int getNumSyllables()
 	{
 	    //TODO: Implement this method in week 1.  See the Module 1 support videos 
-        // if you need help.
+        // if you need help.  And note that there is no need to use a regular
+		// expression for the syllable counting.  We recommend you implement 
+		// the helper function countSyllables in Document.java using a loop, 
+		// and then call it here on each word.
         return 0;
 	}
 	

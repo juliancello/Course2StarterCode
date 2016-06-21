@@ -39,8 +39,8 @@ public class EfficientDocument extends Document {
 	}
 	
 	
-    /** Passes through the text one time to count the number of words, syllables and 
-     * sentences, and set the member variables appropriately.
+    /** Passes through the text one time to count the number of words, syllables 
+     * and sentences, and set the member variables appropriately.
      * Words, sentences and syllables are defined as described below. 
      */
 	private void processText()
@@ -105,6 +105,8 @@ public class EfficientDocument extends Document {
 	 *       with the following exception: a lone "e" at the end of a word 
 	 *       is not considered a syllable unless the word has no other syllables. 
 	 *       You should consider y a vowel.
+	 *       
+	 * Check the examples in the main method below for more information.
 	 * 
 	 * This method does NOT process the whole text each time it is called.  
 	 * It returns information already stored in the EfficientDocument object.
