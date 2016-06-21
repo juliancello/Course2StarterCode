@@ -35,7 +35,7 @@ public class NearbyWords implements SpellingSuggest {
 	public List<String> distanceOne(String s, boolean wordsOnly )  {
 		   List<String> retList = new ArrayList<String>();
 		   insertions(s, retList, wordsOnly);
-		   subsitution(s, retList, wordsOnly);
+		   substitution(s, retList, wordsOnly);
 		   deletions(s, retList, wordsOnly);
 		   return retList;
 	}
@@ -48,7 +48,7 @@ public class NearbyWords implements SpellingSuggest {
 	 * @param wordsOnly controls whether to return only words or any String
 	 * @return
 	 */
-	public void subsitution(String s, List<String> currentList, boolean wordsOnly) {
+	public void substitution(String s, List<String> currentList, boolean wordsOnly) {
 		// for each letter in the s and for all possible replacement characters
 		for(int index = 0; index < s.length(); index++){
 			for(int charCode = (int)'a'; charCode <= (int)'z'; charCode++) {
