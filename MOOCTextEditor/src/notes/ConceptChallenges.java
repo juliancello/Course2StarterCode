@@ -9,6 +9,8 @@ public class ConceptChallenges {
 //    public Document d = new EfficientDocument("Splitting a string, it's as easy as 1 2 33!  Right?");
     public Document d = new EfficientDocument("this is a test.23,54,390.");
 
+    public static String s = "test";
+
     public void string_challenge() {
 //        System.out.println("A"+ d.getTokens("[1233]"));
 //        System.out.println("B"+ d.getTokens("[1, 2, 33]"));
@@ -50,8 +52,27 @@ public class ConceptChallenges {
 
     }
 
+    protected int devCountSyllables(String word)
+    {
+        // TODO: Implement this method so that you can call it from the
+        // getNumSyllables method in BasicDocument (module 2) and
+        // EfficientDocument (module 3).
+
+        // 1. Iterate through each character. If
+        //
+        // convert string to `char[]` array
+        char[] chars = word.toCharArray();
+
+        // iterate over `char[]` array using enhanced for-loop
+        for (char ch: chars) {
+            System.out.print(ch);
+            System.out.print(" ");
+        }
+        return 0;
+    }
+
     public static void main(String... args) {
         ConceptChallenges pt = new ConceptChallenges();
-        pt.string_challenge();
+        pt.devCountSyllables(s);
     }
 }
