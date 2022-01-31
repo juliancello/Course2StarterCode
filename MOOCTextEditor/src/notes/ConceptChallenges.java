@@ -4,6 +4,12 @@ import document.BasicDocument;
 import document.Document;
 import document.EfficientDocument;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class ConceptChallenges {
 
 //    public Document d = new EfficientDocument("Splitting a string, it's as easy as 1 2 33!  Right?");
@@ -62,38 +68,45 @@ public class ConceptChallenges {
         // 1. Iterate through each character. If
         //
         // convert string to `char[]` array
-        char[] chars = word.toCharArray();
+        final Pattern vowels = Pattern.compile("([aeiouy]+)");
+        final String lowerCase = word.toLowerCase();
+        final Matcher m = vowels.matcher(lowerCase);
         int count = 0;
-        boolean isConsonant = false;
-        // iterate over `char[]` array using enhanced for-loop
-        for (char ch: chars) {
-            System.out.print("current char: " + ch + " "); // debug
-            for (char v: vowels) {
-                if (ch == v) { // if ch is vowel
-                    System.out.print("Vowel found. Count = " + count + " ");
-                    if (word.indexOf(ch) == word.length() - 1) { // if ch is last
-                        if (ch != vowels[1]) { // if ch is not 'e'
-                            count++;
-                        }
-                        return count;
-                    }
-                    else { // if ch is not last
-                        // if next char is a consonant
-                        isConsonant = !(chars[word.indexOf(ch) + 1] == vowels[0] | chars[word.indexOf(ch) + 1] == vowels[1] | chars[word.indexOf(ch) + 1] == vowels[2] | chars[word.indexOf(ch) + 1] == vowels[3] | chars[word.indexOf(ch) + 1] == vowels[4] | chars[word.indexOf(ch) + 1] == vowels[5]);
-                    }
-                }
-            }
-            if (isConsonant) {
-                count++;
-                isConsonant = false;
-            }
+
+        while (m.find()) {
+            count++;
+            if (lowerCase.endsWith("e")){count--;}
         }
-        System.out.print("Count = " + count);
-        return count;
+
+        return (count == 0 ? 1 : count);
+    }
+    public int getNumSyllables()
+    {
+        //TODO: Implement this method in week 2.  See the Module 2 support videos
+        // if you need help.  And note that there is no need to use a regular
+        // expression for the syllable counting.  We recommend you implement
+        // the helper function countSyllables in Document.java using a loop,
+        // and then call it here on each word.
+
+        List<String> words = new ArrayList<>(); // "this", "is", "a", "test">;
+        words.add("this");
+        words.add("is");
+        words.add("a");
+        words.add("tiny");
+        words.add("test");
+        int total_count = 0;
+        for (String word: words){
+            total_count += devCountSyllables(word);
+//            System.out.println("count so far " + total_count);
+        }
+//        System.out.println("total_count " + total_count);
+        return total_count;
     }
 
     public static void main(String... args) {
         ConceptChallenges pt = new ConceptChallenges();
-        pt.devCountSyllables(s);
+//        int x = pt.devCountSyllables("puppy");
+        pt.getNumSyllables();
+//        System.out.println(x);
     }
 }
