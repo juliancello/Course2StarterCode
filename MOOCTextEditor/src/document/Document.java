@@ -83,24 +83,20 @@ public abstract class Document {
 							count++;
 							System.out.print("Vowel found. Count = "+ count);
 						}
-						else {return count;}
+						return count;
 					}
 					else { // if ch is not last
-						if (chars[word.indexOf(ch) + 1] == vowels[0] | chars[word.indexOf(ch) + 1] == vowels[1] | chars[word.indexOf(ch) + 1] == vowels[2] | chars[word.indexOf(ch) + 1] == vowels[3] | chars[word.indexOf(ch) + 1] == vowels[4] | chars[word.indexOf(ch) + 1] == vowels[5]){
-							// if next char is vowel
-							isConsonant = false;
-						}
-						else {  // if next char is consonant
-							isConsonant = true;
-						}
+						// if next char is a consonant
+						isConsonant = !(chars[word.indexOf(ch) + 1] == vowels[0] | chars[word.indexOf(ch) + 1] == vowels[1] | chars[word.indexOf(ch) + 1] == vowels[2] | chars[word.indexOf(ch) + 1] == vowels[3] | chars[word.indexOf(ch) + 1] == vowels[4] | chars[word.indexOf(ch) + 1] == vowels[5]);
 					}
 				}
 			}
 			if (isConsonant) {
-
+				 count++;
+				 isConsonant = false;
 			}
 		}
-	    return 0;
+	    return count;
 	}
 	
 	/** A method for testing
