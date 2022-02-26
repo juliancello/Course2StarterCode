@@ -69,6 +69,15 @@ public abstract class Document {
 	    // EfficientDocument (module 3).
 
 		// 1. Iterate through each character. If
+		// errand = err-and
+		// sparrow = sparr-ow
+		// stone = ston-e -1
+		// carried = carr-ied
+
+		for (int i=0; i==word.length()-1;i++) {
+			System.out.println(word.charAt(i));
+		}
+
 	    return 0;
 	}
 	
