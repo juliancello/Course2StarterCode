@@ -9,6 +9,9 @@ public class ConceptChallenges {
 //    public Document d = new EfficientDocument("Splitting a string, it's as easy as 1 2 33!  Right?");
     public Document d = new EfficientDocument("this is a test.23,54,390.");
 
+    public static String s = "Neanderthall";
+    private final char[] vowels = "aeiouy".toCharArray();
+
     public void string_challenge() {
 //        System.out.println("A"+ d.getTokens("[1233]"));
 //        System.out.println("B"+ d.getTokens("[1, 2, 33]"));
@@ -50,8 +53,47 @@ public class ConceptChallenges {
 
     }
 
+    protected int devCountSyllables(String word)
+    {
+        // TODO: Implement this method so that you can call it from the
+        // getNumSyllables method in BasicDocument (module 2) and
+        // EfficientDocument (module 3).
+
+        // 1. Iterate through each character. If
+        //
+        // convert string to `char[]` array
+        char[] chars = word.toCharArray();
+        int count = 0;
+        boolean isConsonant = false;
+        // iterate over `char[]` array using enhanced for-loop
+        for (char ch: chars) {
+            System.out.print("current char: " + ch + " "); // debug
+            for (char v: vowels) {
+                if (ch == v) { // if ch is vowel
+                    System.out.print("Vowel found. Count = " + count + " ");
+                    if (word.indexOf(ch) == word.length() - 1) { // if ch is last
+                        if (ch != vowels[1]) { // if ch is not 'e'
+                            count++;
+                        }
+                        return count;
+                    }
+                    else { // if ch is not last
+                        // if next char is a consonant
+                        isConsonant = !(chars[word.indexOf(ch) + 1] == vowels[0] | chars[word.indexOf(ch) + 1] == vowels[1] | chars[word.indexOf(ch) + 1] == vowels[2] | chars[word.indexOf(ch) + 1] == vowels[3] | chars[word.indexOf(ch) + 1] == vowels[4] | chars[word.indexOf(ch) + 1] == vowels[5]);
+                    }
+                }
+            }
+            if (isConsonant) {
+                count++;
+                isConsonant = false;
+            }
+        }
+        System.out.print("Count = " + count);
+        return count;
+    }
+
     public static void main(String... args) {
         ConceptChallenges pt = new ConceptChallenges();
-        pt.string_challenge();
+        pt.devCountSyllables(s);
     }
 }

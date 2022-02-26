@@ -12,7 +12,8 @@ import java.util.regex.Pattern;
 public abstract class Document {
 
 	private String text;
-	
+	private final char[] vowels = "aeiouy".toCharArray();
+
 	/** Create a new document from the given text.
 	 * Because this class is abstract, this is used only from subclasses.
 	 * @param text The text of the document.
@@ -67,18 +68,35 @@ public abstract class Document {
 		// TODO: Implement this method so that you can call it from the 
 	    // getNumSyllables method in BasicDocument (module 2) and 
 	    // EfficientDocument (module 3).
-
-		// 1. Iterate through each character. If
-		// errand = err-and
-		// sparrow = sparr-ow
-		// stone = ston-e -1
-		// carried = carr-ied
-
-		for (int i=0; i==word.length()-1;i++) {
-			System.out.println(word.charAt(i));
+		// bale
+		// 1. Iterate through each character. If vowel is found, if next consonant is found then increment syllable count by one, else return
+		char[] chars = word.toCharArray();
+		int count = 0;
+		boolean isConsonant = false;
+		// iterate over `char[]` array using enhanced for-loop
+		for (char ch: chars) {
+			System.out.print("current char: " + ch); // debug
+			for (char v: vowels) {
+				if (ch == v) { // if ch is vowel
+					if (word.indexOf(ch) == word.length() - 1) { // if ch is last
+						if (ch != vowels[1]) { // if ch is not 'e'
+							count++;
+							System.out.print("Vowel found. Count = "+ count);
+						}
+						return count;
+					}
+					else { // if ch is not last
+						// if next char is a consonant
+						isConsonant = !(chars[word.indexOf(ch) + 1] == vowels[0] | chars[word.indexOf(ch) + 1] == vowels[1] | chars[word.indexOf(ch) + 1] == vowels[2] | chars[word.indexOf(ch) + 1] == vowels[3] | chars[word.indexOf(ch) + 1] == vowels[4] | chars[word.indexOf(ch) + 1] == vowels[5]);
+					}
+				}
+			}
+			if (isConsonant) {
+				 count++;
+				 isConsonant = false;
+			}
 		}
-
-	    return 0;
+	    return count;
 	}
 	
 	/** A method for testing
