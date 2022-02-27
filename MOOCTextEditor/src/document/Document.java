@@ -96,6 +96,7 @@ public abstract class Document {
 				 isConsonant = false;
 			}
 		}
+		System.out.println("count " + count);
 	    return count;
 	}
 	
@@ -161,7 +162,12 @@ public abstract class Document {
 	{
 	    // DONE: You will play with this method in week 1, and
 		// then implement it in week 2
-	    return text.length();
+		int words = getNumWords();
+		int sentences = getNumSentences();
+		int syllables = getNumSyllables();
+		System.out.println("words " + words + " sentences " + sentences + " syllables " + syllables);
+		return 0.0;
+//		return (206.825 - 1.015 * ( words / sentences ) - 84.6 * ( syllables / words ));
 	}
 	
 	
