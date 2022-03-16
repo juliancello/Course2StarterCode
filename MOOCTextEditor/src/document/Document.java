@@ -13,7 +13,7 @@ public abstract class Document {
 
 	private String text;
 	private final char[] vowels = "aeiouy".toCharArray();
-	
+
 	/** Create a new document from the given text.
 	 * Because this class is abstract, this is used only from subclasses.
 	 * @param text The text of the document.
@@ -70,17 +70,34 @@ public abstract class Document {
 	    // EfficientDocument (module 3).
 		// bale
 		// 1. Iterate through each character. If vowel is found, if next consonant is found then increment syllable count by one, else return
-		final Pattern vowels = Pattern.compile("([aeiouy]+)");
-		final String lowerCase = word.toLowerCase();
-		final Matcher m = vowels.matcher(lowerCase);
+		char[] chars = word.toCharArray();
 		int count = 0;
-
-		while (m.find()) {
-			count++;
-			if (lowerCase.endsWith("e")){count--;}
+		boolean isConsonant = false;
+		// iterate over `char[]` array using enhanced for-loop
+		for (char ch: chars) {
+			System.out.print("current char: " + ch); // debug
+			for (char v: vowels) {
+				if (ch == v) { // if ch is vowel
+					if (word.indexOf(ch) == word.length() - 1) { // if ch is last
+						if (ch != vowels[1]) { // if ch is not 'e'
+							count++;
+							System.out.print("Vowel found. Count = "+ count);
+						}
+						return count;
+					}
+					else { // if ch is not last
+						// if next char is a consonant
+						isConsonant = !(chars[word.indexOf(ch) + 1] == vowels[0] | chars[word.indexOf(ch) + 1] == vowels[1] | chars[word.indexOf(ch) + 1] == vowels[2] | chars[word.indexOf(ch) + 1] == vowels[3] | chars[word.indexOf(ch) + 1] == vowels[4] | chars[word.indexOf(ch) + 1] == vowels[5]);
+					}
+				}
+			}
+			if (isConsonant) {
+				 count++;
+				 isConsonant = false;
+			}
 		}
-
-		return (count == 0 ? 1 : count);
+		System.out.println("count " + count);
+	    return count;
 	}
 	
 	/** A method for testing
@@ -145,7 +162,12 @@ public abstract class Document {
 	{
 	    // DONE: You will play with this method in week 1, and
 		// then implement it in week 2
-	    return text.length();
+		int words = getNumWords();
+		int sentences = getNumSentences();
+		int syllables = getNumSyllables();
+		System.out.println("words " + words + " sentences " + sentences + " syllables " + syllables);
+		return 0.0;
+//		return (206.825 - 1.015 * ( words / sentences ) - 84.6 * ( syllables / words ));
 	}
 	
 	
